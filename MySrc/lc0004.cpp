@@ -32,11 +32,11 @@ public:
             if (num1 == num2) {
                 return num1;
             } else if (num1 < num2) {
-                int offset = MyMin(k1, k2);
+                int offset = min(k1, k2);
                 RemoveLeft(nums1, offset);
                 RemoveRight(nums2, offset);   
             } else {
-                int offset = MyMin(k2, k1);
+                int offset = min(k2, k1);
                 RemoveLeft(nums2, offset);
                 RemoveRight(nums1, offset);
             }
@@ -50,10 +50,6 @@ public:
     }
     
 private:
-    int MyMin(int x, int y)
-    {
-        return x <= y ? x : y;
-    }
     void RemoveLeft(vector<int>& nums, int offset)
     {
         while (offset > 0 && nums.size() > 0) {            
