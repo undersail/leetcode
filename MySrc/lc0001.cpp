@@ -1,22 +1,19 @@
 // https://leetcode-cn.com/problems/two-sum/
 
+// 暴力法 O(n^2), O(1)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int index1 = -1;
-        int index2 = -1;
+        vector<int> res;
         for (int i = 0; i < nums.size(); i++) {
             for (int j = i + 1; j < nums.size(); j++) {
                 if(nums[i] + nums[j] == target) {
-                    index1 = i;
-                    index2 = j;
+                    res.push_back(i);
+                    res.push_back(j);
                     break;
                 }
             }
         }
-        vector<int> res;
-        res.push_back(index1);
-        res.push_back(index2);
         return res;
     }
 };
