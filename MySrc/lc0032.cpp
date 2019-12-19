@@ -1,5 +1,6 @@
 // https://leetcode-cn.com/problems/longest-valid-parentheses/
 
+// 栈操作
 class Solution {
 public:
     int longestValidParentheses(string s) {

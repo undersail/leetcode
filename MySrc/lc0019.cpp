@@ -8,6 +8,8 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+// 链表操作
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {

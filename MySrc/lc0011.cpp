@@ -1,24 +1,25 @@
 // https://leetcode-cn.com/problems/container-with-most-water/
 
+
+// 双指针
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        int size = height.size();
-        int maxW = size - 1;
-        int maxA = 0, maxTmp = 0;
-        
-        for(int i = 0; i < size; i++){
-            maxA = max(maxA, (maxW - i) * min(height[i], height[maxW]));
-
-            for(int j = size - 2; j > i; j--){
-                if(height[j] < height[maxW])
+        int maxW = height.size() - 1;
+        int maxArea = 0;
+        // 左指针向右移
+        for(int i = 0; i < height.size(); i++) {
+            int tmpArea = (maxW - i) * min(height[i], height[maxW]);
+            maxArea = max(maxArea, tmpArea);
+            // 右指针向左移
+            for(int j = height.size() - 2; j > i; j--) {
+                if(height[j] <= height[maxW]) {
                     continue;
-                else{
-                    int maxTmp = (j - i) * min(height[i], height[j]);
-                    maxA = max(maxA, maxTmp);
-                }                    
+                }
+                int tmpArea = (j - i) * min(height[i],  height[j]);
+                maxArea = max(maxArea, tmpArea);
             }
         }
-        return maxA;
+        return maxArea;
     }
 };

@@ -17,7 +17,10 @@ public:
             matchInfo[i][0] = false;
         }
         for (int j = 1; j < p.length(); j++) {
-            matchInfo[0][j] = (matchInfo[0][j - 1] && p[j] == '*');            
+            matchInfo[0][j] = (matchInfo[0][j - 1] && p[j] == '*');
+            if (j - 2 >= 0) {
+                matchInfo[0][j] = matchInfo[0][j] || matchInfo[0][j - 2];  // *号匹配零个字符的情况
+            }        
         }
 
         for (int i = 1; i < s.length(); i++) {
