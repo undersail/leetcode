@@ -9,6 +9,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// 二叉树遍历：中序即：左->中->右
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
@@ -17,10 +19,10 @@ public:
             return res;
         }
         
-        // 递归
+        // 递归，更容易理解一些
         MidTraversal(root, res); 
         
-        // 迭代
+        // 迭代，以下代码内存超出限制
         /*
         TreeNode* curNode = root;
         stack<TreeNode*> nodeHistory;
