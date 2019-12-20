@@ -10,7 +10,7 @@
  * };
  */
 
-// 递归+状态记录
+// 递归+状态记录，map用法
 class Solution {
 public:
     int rob(TreeNode* root) {
