@@ -1,6 +1,7 @@
 // https://leetcode-cn.com/problems/regular-expression-matching/
 
 // 动态规划
+// 当前结果：解答错误，部分用例通过
 class Solution {
 
 public:
