@@ -1,10 +1,14 @@
 // https://leetcode-cn.com/problems/trapping-rain-water/
 
+// 按列法：逐个计算每根柱子上面可以存多少水
+// auto, max_element 用法
 class Solution {
 public:
     int trap(vector<int>& height) {
-        if(height.size() < 3)
+        // 至少3根柱子才能接水
+        if(height.size() < 3) {
             return 0;
+        }
         int sum = 0;
         int curLMax = height[0];
         int curRMax = 0;
@@ -16,9 +20,10 @@ public:
                 auto rMax = max_element(height.begin() + i + 1, height.end());
                 curRMax = *rMax;
             }
-            if (curLMax > height[i] && curRMax > height[i]) {
+            // 计算当前柱子的存水量
+            if (height[i] < curLMax && height[i] < curRMax) {
                 sum += min(curLMax, curRMax) - height[i];
-            }          
+            }
         }
         return sum;
     }
