@@ -30,3 +30,31 @@ public:
         return combination(m + n - 2, m - 1);
     }
 };
+
+// 方法二：动态规划
+// dp[i][j] 表示从(0,0)到达(i,j)的最多路径
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m, vector<int>(n, -1));
+        // 初始化边界条件
+        for (int i = 0; i < m; i++) {
+            // 第一列
+            dp[i][0] = 1;
+        }
+        for (int j = 0; j < n; j++) {
+            // 第一行
+            dp[0][j] = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (dp[i][j] >= 0) {
+                    continue;
+                }
+                // 任意一点只能从左边或上边来
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+};
