@@ -1,5 +1,6 @@
 // https://leetcode-cn.com/problems/longest-common-prefix/
 
+// 字符串查找、stringstream操作
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
@@ -8,9 +9,9 @@ public:
         }
         string longestPre = "";
         for (int i = 0; i < strs[0].size(); i++) {
-            char cur = strs[0].at(i);
+            char cur = strs[0][i];
             for (int j = 1; j < strs.size(); j++) {
-                if (i >= strs[j].size() || strs[j].at(i) != cur) {
+                if (strs[j].size() <= i || strs[j][i] != cur) {
                     return longestPre;
                 }
             }
