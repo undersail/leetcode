@@ -1,5 +1,6 @@
 // https://leetcode-cn.com/problems/maximum-subarray/
 
+// 顺序遍历，基本算数
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
