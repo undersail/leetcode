@@ -1,5 +1,6 @@
 // https://leetcode-cn.com/problems/shortest-bridge/
 
+// 当前结果：解答错误，70 / 96 个通过测试用例
 class Solution {
 public:
     int shortestBridge(vector<vector<int>>& A) {
