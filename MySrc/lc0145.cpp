@@ -9,6 +9,9 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// 二叉对，后序遍历：左->右->根
+// 递归，题目描述：递归算法很简单，你可以通过迭代算法完成吗？
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
