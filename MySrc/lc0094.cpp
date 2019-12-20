@@ -10,7 +10,7 @@
  * };
  */
 
-// 二叉树遍历：中序即：左->中->右
+// 二叉树遍历：中序即：左->根->右
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
